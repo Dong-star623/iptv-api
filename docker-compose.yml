@@ -10,8 +10,8 @@ services:
       - "80:8080"
 
     volumes:
-      - /iptv-api/config:/iptv-api/config
-      - /iptv-api/output:/iptv-api/output
+      - ./config:/iptv-api/config
+      - ./output:/iptv-api/output
 
     environment:
       PUBLIC_SCHEME: "http"
