@@ -1048,7 +1048,7 @@ def process_write_content(
                 continue
             for item in channel_urls:
                 item_url = item["url"]
-                if open_url_info and item["extra_info"]:
+                if open_url_info and item.get("extra_info"):
                     item_url = add_url_info(item_url, item["extra_info"])
                 total_item_url = f"{hls_url}/{item['id']}.m3u8" if hls_url else item_url
                 content += f"\n{name},{total_item_url}"
@@ -1095,7 +1095,7 @@ def process_write_content(
         now = get_datetime_now()
         update_time_item_url = update_time_item["url"]
         update_title = t("content.update_time") if is_last else t("content.update_running")
-        if open_url_info and update_time_item["extra_info"]:
+        if open_url_info and update_time_item.get("extra_info"):
             update_time_item_url = add_url_info(update_time_item_url, update_time_item["extra_info"])
         value = f"{hls_url}/{update_time_item["id"]}.m3u8" if hls_url else update_time_item_url
         if config.update_time_position == "top":
