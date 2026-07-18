@@ -4,11 +4,10 @@
 # Supports setting UA: https://xxx.com/subscribe.m3u UA="xxx"
 # 这是订阅源列表，每行一个订阅地址
 # This is a list of subscription sources, with one subscription address per line
-https://iptv.b2og.com/txt/fmml_ipv6.txt
-https://live.zbds.top/tv/iptv4.txt
-https://live.fanmingming.com/tv/m3u/ipv6.m3u
-https://m3u.ibert.me/txt/o_cn.txt
-
+# ===== 新增(2026-07-18):经实测可真正播放的源 =====
+# suxuang/myIPTV:含4K频道,百视通/阿里源(实测可播)
+# vbskycn/iptv:6小时自动更新,IPv4/IPv6双栈
+# hujingguang/ChinaIPTV:国内卫视聚合源
 # https://ghgo.xyz/raw.githubusercontent.com/suxuang/myIPTV/main/ipv6.m3u
 # https://live.zbds.top/tv/iptv6.txt
 # https://ghgo.xyz/raw.githubusercontent.com/joevess/IPTV/main/home.m3u8
@@ -22,6 +21,14 @@ https://m3u.ibert.me/txt/o_cn.txt
 # https://ghgo.xyz/raw.githubusercontent.com/asdjkl6/tv/tv/.m3u/整套直播源/测试/整套直播源/1.txt
 # https://ghgo.xyz/raw.githubusercontent.com/asdjkl6/tv/tv/.m3u/整套直播源/测试/整套直播源/kk.txt
 # https://ghgo.xyz/raw.githubusercontent.com/yuanzl77/IPTV/master/live.txt
+https://iptv.b2og.com/txt/fmml_ipv6.txt
+https://live.zbds.top/tv/iptv4.txt
+https://live.fanmingming.com/tv/m3u/ipv6.m3u
+https://m3u.ibert.me/txt/o_cn.txt
+https://raw.githubusercontent.com/suxuang/myIPTV/main/ipv4.m3u
+https://raw.githubusercontent.com/hujingguang/ChinaIPTV/main/cnTV2_GuoNei.m3u8
+
+# https://raw.githubusercontent.com/vbskycn/iptv/main/tv/iptv4.m3u
 
 [WHITELIST]
 # 以下是订阅源的白名单，白名单内的订阅源获取的接口将不会参与测速，始终保留至结果最前。

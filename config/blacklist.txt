@@ -2,3 +2,6 @@
 # This is the interface blacklist list, the interface matching the keyword will be blocked, one keyword line
 /audio/
 bxtv.3a.ink
+# 移动 IPTV 源:测速能过但实际播放返回 400(电视/播放器无法播放)
+2409:8087
+otttv.bj.chinamobile.com
