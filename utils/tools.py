@@ -284,18 +284,27 @@ def get_total_urls_from_sorted_data(data):
 def check_ipv6_support():
     """
     Check if the system network supports ipv6
+
+    使用国内 IPv6 测试节点(避免海外节点被代理或不可达导致误判)。
+    依次尝试多个国内/可直连节点,任一成功即判定支持 IPv6。
     """
     if os.getenv("GITHUB_ACTIONS"):
         return False
-    url = "https://ipv6.tokyo.test-ipv6.com/ip/?callback=?&testdomain=test-ipv6.com&testname=test_aaaa"
-    try:
-        print(t("msg.check_ipv6_support"))
-        response = requests.get(url, timeout=10)
-        if response.status_code == 200:
-            print(t("msg.ipv6_supported"))
-            return True
-    except Exception:
-        pass
+    # 国内 IPv6 测试节点列表(按优先级,首个成功即返回)
+    test_urls = [
+        "https://testipv6.cn/ip/?callback=?&testdomain=test-ipv6.com&testname=test_aaaa",
+        "https://ipv6.lookup.test-ipv6.com/ip/?callback=?",
+        "https://6.ipw.cn",
+    ]
+    print(t("msg.check_ipv6_support"))
+    for url in test_urls:
+        try:
+            response = requests.get(url, timeout=8)
+            if response.status_code == 200:
+                print(t("msg.ipv6_supported"))
+                return True
+        except Exception:
+            continue
     print(t("msg.ipv6_not_supported"))
     return False
 
